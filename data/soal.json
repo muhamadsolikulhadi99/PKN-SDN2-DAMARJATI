@@ -1,0 +1,26 @@
+[
+  {
+    "materi": 1,
+    "soal": "Pancasila terdiri dari berapa sila?",
+    "opsi": ["3", "4", "5", "6"],
+    "jawaban": 2
+  },
+  {
+    "materi": 2,
+    "soal": "Hak berarti ...",
+    "opsi": ["Kewajiban", "Sesuatu yang harus diterima", "Larangan", "Hukuman"],
+    "jawaban": 1
+  },
+  {
+    "materi": 3,
+    "soal": "Semboyan negara Indonesia adalah ...",
+    "opsi": ["Garuda", "Bhinneka Tunggal Ika", "Pancasila", "UUD 1945"],
+    "jawaban": 1
+  },
+  {
+    "materi": 4,
+    "soal": "Presiden adalah kepala ...",
+    "opsi": ["Sekolah", "Negara", "Desa", "Kecamatan"],
+    "jawaban": 1
+  }
+]

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi 6 - Sila Kelima</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.highlight-row {
+    background-color: #fff176;
+    transition: 0.3s;
+}
+</style>
+
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="container">
+
+<h2>📘 MATERI 6: SILA KELIMA</h2>
+
+<div class="illustration">
+    <img src="img/padi_kapas.png" alt="Lambang Sila Kelima">
+</div>
+
+<div class="audio-box">
+    <button class="btn-audio play" onclick="playTTS()">▶ Play</button>
+    <button class="btn-audio pause" onclick="pauseTTS()">⏸ Pause</button>
+    <button class="btn-audio stop" onclick="stopTTS()">⏹ Stop</button>
+</div>
+
+<div class="text-area" id="materiText">
+
+<p><b>SILA KELIMA: KEADILAN SOSIAL BAGI SELURUH RAKYAT INDONESIA</b></p>
+
+<p>Nilai Keadilan berarti setiap orang berhak memperoleh perlakuan yang adil dan seimbang dalam kehidupan.</p>
+
+<table>
+<tr>
+<th>No</th>
+<th>Bagian</th>
+<th>Isi</th>
+</tr>
+
+<tr id="row1">
+<td>1</td>
+<td><b>Makna Nilai Keadilan</b></td>
+<td>
+• Bersikap adil terhadap diri sendiri dan orang lain<br>
+• Menjalankan hak dan kewajiban secara seimbang<br>
+• Menghormati hak dan hasil karya orang lain<br>
+• Mengembangkan sikap peduli, gotong royong, dan kekeluargaan<br>
+• Berperilaku jujur dan bertanggung jawab
+</td>
+</tr>
+
+<tr id="row2">
+<td>2</td>
+<td><b>Contoh Pengamalan</b></td>
+<td>
+• Mengerjakan tugas sendiri tanpa menyontek<br>
+• Membagi tugas kelompok secara adil<br>
+• Mengantre dengan tertib<br>
+• Tidak mengambil hak orang lain<br>
+• Bersikap jujur dalam setiap tindakan
+</td>
+</tr>
+
+</table>
+
+<!-- ============================== -->
+<!-- TTS KHUSUS ISI TABEL SAJA -->
+<!-- ============================== -->
+
+<div class="tts-only">
+
+<p>Makna Nilai Keadilan. Bersikap adil terhadap diri sendiri dan orang lain. Menjalankan hak dan kewajiban secara seimbang. Menghormati hak dan hasil karya orang lain. Mengembangkan sikap peduli, gotong royong, dan kekeluargaan. Berperilaku jujur dan bertanggung jawab.</p>
+
+<p>Contoh Pengamalan. Mengerjakan tugas sendiri tanpa menyontek. Membagi tugas kelompok secara adil. Mengantre dengan tertib. Tidak mengambil hak orang lain. Bersikap jujur dalam setiap tindakan.</p>
+
+</div>
+
+</div>
+
+<div class="badge" id="badge">
+🏆 Hebat! Materi 6 Selesai Dibaca!
+</div>
+
+<div class="nav-btn">
+    <button class="prev" onclick="window.location.href='materi5.html'">⬅ Sebelumnya</button>
+    <button class="btn-nav menu-btn" onclick="window.location.href='index.html'">🏠 Kembali ke Menu
+    <button class="next" onclick="window.location.href='materi7.html'">Lanjut ➡</button>
+</div>
+
+</div>
+
+<script src="js/materi.js"></script>
+
+</body>
+</html>

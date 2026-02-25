@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard PKN Kelas 6</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Comic Sans MS', sans-serif;
+    background: linear-gradient(135deg,#36d1dc,#5b86e5);
+    text-align:center;
+    padding:20px;
+}
+
+/* KARTU UTAMA */
+.container{
+    background:white;
+    max-width:1000px;
+    margin:auto;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* JUDUL */
+h1{
+    margin:10px 0;
+    color:#2c3e50;
+}
+
+/* PROGRESS */
+.progress{
+    width:95%;
+    height:25px;
+    background:#ddd;
+    border-radius:20px;
+    margin:20px auto;
+    overflow:hidden;
+}
+
+#globalProgress{
+    height:100%;
+    width:0%;
+    background:#2ecc71;
+    border-radius:20px;
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    line-height:25px;
+    transition:1s;
+}
+
+/* GRID MATERI */
+.menu-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+/* KARTU MATERI */
+.menu-btn{
+    padding:18px 10px;
+    font-size:15px;
+    border:none;
+    border-radius:15px;
+    background:orange;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.menu-btn:hover{
+    transform:scale(1.05);
+    background:#ff8800;
+}
+
+/* TOMBOL NILAI */
+.nilai-btn{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    font-size:16px;
+    border:none;
+    border-radius:15px;
+    background:#34495e;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.nilai-btn:hover{
+    transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+@media(max-width:500px){
+    h1{
+        font-size:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Assalamualaikum, <span id="namaSiswa">Siswa</span> 👋</h1>
+<p id="absenText"></p>
+
+<div class="progress">
+    <div id="globalProgress">0%</div>
+</div>
+
+<div class="menu-grid" id="menuContainer"></div>
+
+<button class="nilai-btn" onclick="location.href='hasil.html'">
+📊 Lihat Nilai
+</button>
+
+</div>
+
+<script>
+
+// =====================
+// AMBIL DATA DARI INDEX
+// =====================
+let nama = localStorage.getItem("nama_siswa");
+let absen = localStorage.getItem("absen_siswa");
+
+if(nama && nama.trim() !== ""){
+    document.getElementById("namaSiswa").innerText = nama;
+}
+
+if(absen && absen.trim() !== ""){
+    document.getElementById("absenText").innerText = "Nomor Absen: " + absen;
+}
+
+// =====================
+// TOTAL MATERI
+// =====================
+const totalMateri = 49;
+const menuContainer = document.getElementById("menuContainer");
+
+// =====================
+// BUAT TOMBOL OTOMATIS
+// =====================
+for(let i=1; i<=totalMateri; i++){
+    let btn = document.createElement("button");
+    btn.className = "menu-btn";
+
+    // Cek apakah materi sudah selesai
+    if(localStorage.getItem("materi"+i+"_selesai")){
+        btn.innerHTML = "✅ Materi " + i;
+        btn.style.background = "#2ecc71";
+    } else {
+        btn.innerHTML = "📘 Materi " + i;
+    }
+
+    btn.onclick = function(){
+        location.href = "materi" + i + ".html";
+    };
+
+    menuContainer.appendChild(btn);
+}
+
+// =====================
+// HITUNG PROGRESS
+// =====================
+let selesai = 0;
+
+for(let i=1; i<=totalMateri; i++){
+    if(localStorage.getItem("materi"+i+"_selesai")){
+        selesai++;
+    }
+}
+
+let persen = Math.round((selesai / totalMateri) * 100);
+
+let progressBar = document.getElementById("globalProgress");
+progressBar.style.width = persen + "%";
+progressBar.innerText = persen + "%";
+
+</script>
+
+</body>
+</html>

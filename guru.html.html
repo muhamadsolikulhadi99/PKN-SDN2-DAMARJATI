@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Guru Premium</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{
+    font-family:Arial;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    padding:20px;
+}
+.app{
+    max-width:1200px;
+    margin:auto;
+    background:white;
+    border-radius:20px;
+    padding:25px;
+}
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+button{
+    padding:8px 14px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-left:5px;
+}
+.mode-btn{ background:#3498db; color:white; }
+.refresh-btn{ background:#27ae60; color:white; }
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+th,td{
+    padding:8px;
+    text-align:center;
+}
+th{
+    background:#2c3e50;
+    color:white;
+}
+tr:nth-child(even){
+    background:#f2f2f2;
+}
+canvas{
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="header">
+    <h2>📊 Dashboard Guru</h2>
+    <div>
+        <button class="mode-btn" onclick="setMode('detail')">Detail</button>
+        <button class="mode-btn" onclick="setMode('ranking')">Ranking</button>
+        <button class="refresh-btn" onclick="loadData()">Refresh</button>
+    </div>
+</div>
+
+<table>
+<thead id="tableHead"></thead>
+<tbody id="tableBody"></tbody>
+</table>
+
+<canvas id="chart"></canvas>
+
+</div>
+
+<script>
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbzMpyclX-FVsuw4i_7X9DL014Sd23nHezcdnu2ujiYaazBAEgpA3ci7amCR8k_Boqh-jA/exec";
+
+let rawData = [];
+let mode = "detail";
+let chart;
+
+function setMode(m){
+    mode = m;
+    render();
+}
+
+function loadData(){
+    fetch(scriptURL)
+    .then(res => res.json())
+    .then(data=>{
+        rawData = data.slice(1); // hilangkan header
+        render();
+    });
+}
+
+function render(){
+
+    if(mode === "detail"){
+        renderDetail();
+    }else{
+        renderRanking();
+    }
+}
+
+function renderDetail(){
+
+    document.getElementById("tableHead").innerHTML = `
+        <tr>
+        <th>Absen</th>
+        <th>Nama</th>
+        <th>Tanggal</th>
+        <th>Waktu</th>
+        <th>Materi</th>
+        <th>Total</th>
+        </tr>`;
+
+    let html = "";
+
+    rawData.forEach(row=>{
+        html += `
+        <tr>
+            <td>${row[0]}</td>
+            <td>${row[1]}</td>
+            <td>${row[2]}</td>
+            <td>${row[3]}</td>
+            <td>${row[4]}</td>
+            <td>${row[5]}</td>
+        </tr>`;
+    });
+
+    document.getElementById("tableBody").innerHTML = html;
+
+    destroyChart();
+}
+
+function renderRanking(){
+
+    let siswaMap = {};
+
+    rawData.forEach(row=>{
+        let key = row[0] + "_" + row[1];
+        let total = parseInt(row[5]) || 0;
+
+        if(!siswaMap[key] || siswaMap[key].total < total){
+            siswaMap[key] = {
+                absen: row[0],
+                nama: row[1],
+                total: total
+            };
+        }
+    });
+
+    let siswaArray = Object.values(siswaMap);
+
+    siswaArray.sort((a,b)=> b.total - a.total);
+
+    document.getElementById("tableHead").innerHTML = `
+        <tr>
+        <th>Ranking</th>
+        <th>Absen</th>
+        <th>Nama</th>
+        <th>Total Materi</th>
+        </tr>`;
+
+    let html = "";
+    let labels = [];
+    let values = [];
+
+    siswaArray.forEach((s,i)=>{
+        html += `
+        <tr>
+            <td>${i+1}</td>
+            <td>${s.absen}</td>
+            <td>${s.nama}</td>
+            <td>${s.total}</td>
+        </tr>`;
+
+        labels.push(s.nama);
+        values.push(s.total);
+    });
+
+    document.getElementById("tableBody").innerHTML = html;
+
+    renderChart(labels, values);
+}
+
+function renderChart(labels, values){
+
+    destroyChart();
+
+    const ctx = document.getElementById("chart").getContext("2d");
+
+    chart = new Chart(ctx, {
+        type: "bar",
+        data:{
+            labels: labels,
+            datasets:[{
+                label:"Total Materi Selesai",
+                data: values
+            }]
+        },
+        options:{
+            responsive:true,
+            scales:{ y:{ beginAtZero:true } }
+        }
+    });
+}
+
+function destroyChart(){
+    if(chart){
+        chart.destroy();
+        chart = null;
+    }
+}
+
+loadData();
+
+</script>
+
+</body>
+</html>

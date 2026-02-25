@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi 5 - Sila Keempat</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.highlight-row {
+    background-color: #fff176;
+    transition: 0.3s;
+}
+</style>
+
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="container">
+
+<h2>📘 MATERI 5: SILA KEEMPAT</h2>
+
+<div class="illustration">
+    <img src="img/kepala_banteng.png" alt="Lambang Sila Keempat">
+</div>
+
+<div class="audio-box">
+    <button class="btn-audio play" onclick="playTTS()">▶ Play</button>
+    <button class="btn-audio pause" onclick="pauseTTS()">⏸ Pause</button>
+    <button class="btn-audio stop" onclick="stopTTS()">⏹ Stop</button>
+</div>
+
+<div class="text-area" id="materiText">
+
+<p><b>SILA KEEMPAT: KERAKYATAN YANG DIPIMPIN OLEH HIKMAT KEBIJAKSANAAN DALAM PERMUSYAWARATAN / PERWAKILAN</b></p>
+
+<p>Nilai Kerakyatan berarti keputusan diambil melalui musyawarah untuk mencapai mufakat dengan mengutamakan kepentingan bersama.</p>
+
+<table>
+<tr>
+<th>No</th>
+<th>Bagian</th>
+<th>Isi</th>
+</tr>
+
+<tr id="row1">
+<td>1</td>
+<td><b>Makna Nilai Kerakyatan</b></td>
+<td>
+• Menghargai pendapat orang lain<br>
+• Mengutamakan musyawarah dalam pengambilan keputusan<br>
+• Tidak memaksakan kehendak kepada orang lain<br>
+• Bersikap bijaksana dan bertanggung jawab<br>
+• Menerima serta melaksanakan hasil keputusan bersama
+</td>
+</tr>
+
+<tr id="row2">
+<td>2</td>
+<td><b>Contoh Pengamalan</b></td>
+<td>
+• Bermusyawarah dalam menentukan ketua kelas<br>
+• Menghargai pendapat teman saat diskusi<br>
+• Menerima hasil keputusan bersama dengan lapang dada<br>
+• Menyampaikan pendapat secara sopan<br>
+• Tidak memaksakan kehendak kepada teman
+</td>
+</tr>
+
+</table>
+
+<!-- ============================== -->
+<!-- TTS KHUSUS ISI TABEL SAJA -->
+<!-- ============================== -->
+
+<div class="tts-only">
+
+<p>Makna Nilai Kerakyatan. Menghargai pendapat orang lain. Mengutamakan musyawarah dalam pengambilan keputusan. Tidak memaksakan kehendak kepada orang lain. Bersikap bijaksana dan bertanggung jawab. Menerima serta melaksanakan hasil keputusan bersama.</p>
+
+<p>Contoh Pengamalan. Bermusyawarah dalam menentukan ketua kelas. Menghargai pendapat teman saat diskusi. Menerima hasil keputusan bersama dengan lapang dada. Menyampaikan pendapat secara sopan. Tidak memaksakan kehendak kepada teman.</p>
+
+</div>
+
+</div>
+
+<div class="badge" id="badge">
+🏆 Hebat! Materi 5 Selesai Dibaca!
+</div>
+
+<div class="nav-btn">
+    <button class="prev" onclick="window.location.href='materi4.html'">⬅ Sebelumnya</button>
+    <button class="btn-nav menu-btn" onclick="window.location.href='index.html'">🏠 Kembali ke Menu
+    <button class="next" onclick="window.location.href='materi6.html'">Lanjut ➡</button>
+</div>
+
+</div>
+
+<script src="js/materi.js"></script>
+
+</body>
+</html>

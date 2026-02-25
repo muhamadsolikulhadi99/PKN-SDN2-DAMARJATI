@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi 25 - Keragaman Budaya Indonesia</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Highlight baris tabel saat dibaca */
+.highlight-row {
+    background-color: #fff176;
+    transition: 0.3s;
+}
+</style>
+
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="container">
+
+<h2>📘 MATERI 25: KERAGAMAN BUDAYA INDONESIA</h2>
+
+<div class="illustration">
+    <img src="img/rumahadat.png" alt="Rumah Adat Indonesia">
+</div>
+
+<div class="audio-box">
+    <button class="btn-audio play" onclick="playTTS()">▶ Play</button>
+    <button class="btn-audio pause" onclick="pauseTTS()">⏸ Pause</button>
+    <button class="btn-audio stop" onclick="stopTTS()">⏹ Stop</button>
+</div>
+
+<div class="text-area" id="materiText">
+
+<p><b>Keragaman Budaya Indonesia</b></p>
+
+<p><b>1. Keragaman Rumah Adat dan Ciri Khasnya</b></p>
+
+<p><b>Fungsi Rumah Adat:</b> Tempat tinggal, tempat kegiatan adat, simbol budaya, dan warisan budaya.</p>
+
+<table>
+<tr>
+<th>No</th>
+<th>Nama Rumah Adat</th>
+<th>Daerah Asal</th>
+<th>Ciri Khas</th>
+</tr>
+
+<tr id="row1">
+<td>1</td>
+<td>Rumah Gadang</td>
+<td>Sumatra Barat</td>
+<td>Atap seperti tanduk kerbau</td>
+</tr>
+
+<tr id="row2">
+<td>2</td>
+<td>Rumah Joglo</td>
+<td>Jawa Tengah & DIY</td>
+<td>Atap tinggi dan tiang besar</td>
+</tr>
+
+<tr id="row3">
+<td>3</td>
+<td>Rumah Kebaya</td>
+<td>DKI Jakarta</td>
+<td>Atap menyerupai lipatan kebaya</td>
+</tr>
+
+<tr id="row4">
+<td>4</td>
+<td>Rumah Kajang Leko</td>
+<td>Jambi</td>
+<td>Rumah panggung berukiran</td>
+</tr>
+
+<tr id="row5">
+<td>5</td>
+<td>Rumah Limas</td>
+<td>Sumatra Selatan</td>
+<td>Bertingkat dan berbentuk limas</td>
+</tr>
+
+<tr id="row6">
+<td>6</td>
+<td>Rumah Kasepuhan</td>
+<td>Jawa Barat</td>
+<td>Bentuk pendopo</td>
+</tr>
+
+<tr id="row7">
+<td>7</td>
+<td>Rumah Tongkonan</td>
+<td>Sulawesi Selatan</td>
+<td>Atap seperti perahu</td>
+</tr>
+
+<tr id="row8">
+<td>8</td>
+<td>Rumah Sasadu</td>
+<td>Maluku Utara</td>
+<td>Tidak berdinding</td>
+</tr>
+
+<tr id="row9">
+<td>9</td>
+<td>Rumah Honai</td>
+<td>Papua</td>
+<td>Bulat, beratap jerami</td>
+</tr>
+
+<tr id="row10">
+<td>10</td>
+<td>Rumah Banjar Bubungan Tinggi</td>
+<td>Kalimantan Selatan</td>
+<td>Atap tinggi dan curam</td>
+</tr>
+
+</table>
+
+<!-- ============================== -->
+<!-- TTS KHUSUS ISI TABEL SAJA -->
+<!-- ============================== -->
+
+<div class="tts-only">
+
+<p>Nomor 1. Rumah Gadang, berasal dari Sumatra Barat. Ciri khas: Atap seperti tanduk kerbau.</p>
+<p>Nomor 2. Rumah Joglo, berasal dari Jawa Tengah dan Daerah Istimewa Yogyakarta. Ciri khas: Atap tinggi dan tiang besar.</p>
+<p>Nomor 3. Rumah Kebaya, berasal dari DKI Jakarta. Ciri khas: Atap menyerupai lipatan kebaya.</p>
+<p>Nomor 4. Rumah Kajang Leko, berasal dari Jambi. Ciri khas: Rumah panggung berukiran.</p>
+<p>Nomor 5. Rumah Limas, berasal dari Sumatra Selatan. Ciri khas: Bertingkat dan berbentuk limas.</p>
+<p>Nomor 6. Rumah Kasepuhan, berasal dari Jawa Barat. Ciri khas: Bentuk pendopo.</p>
+<p>Nomor 7. Rumah Tongkonan, berasal dari Sulawesi Selatan. Ciri khas: Atap seperti perahu.</p>
+<p>Nomor 8. Rumah Sasadu, berasal dari Maluku Utara. Ciri khas: Tidak berdinding.</p>
+<p>Nomor 9. Rumah Honai, berasal dari Papua. Ciri khas: Bulat dan beratap jerami.</p>
+<p>Nomor 10. Rumah Banjar Bubungan Tinggi, berasal dari Kalimantan Selatan. Ciri khas: Atap tinggi dan curam.</p>
+
+</div>
+
+</div>
+
+<div class="badge" id="badge">
+🏆 Hebat! Materi 25 Selesai Dibaca!
+</div>
+
+<div class="nav-btn">
+    <button class="prev" onclick="window.location.href='materi24.html'">⬅ Sebelumnya</button>
+    <button class="btn-nav menu-btn" onclick="window.location.href='index.html'">🏠 Kembali ke Menu
+    <button class="next" onclick="window.location.href='materi26.html'">Lanjut ➡</button>
+</div>
+
+</div>
+
+<script src="js/materi.js"></script>
+
+</body>
+</html>

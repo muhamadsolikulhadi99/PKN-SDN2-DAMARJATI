@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PKN KELAS 6 - SDN 2 DAMARJATI</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Comic Sans MS', sans-serif;
+    background: linear-gradient(135deg,#36d1dc,#5b86e5,#ff9966);
+    background-size:400% 400%;
+    animation: bgMove 10s infinite alternate;
+    text-align:center;
+    padding:20px;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    100%{background-position:100% 50%;}
+}
+
+.card{
+    background:white;
+    max-width:400px;
+    margin:auto;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.logo{
+    width:100px;
+    margin-bottom:10px;
+}
+
+h1{
+    font-size:22px;
+    color:#2c3e50;
+    margin:10px 0;
+}
+
+p{
+    font-size:14px;
+    color:#555;
+}
+
+.guru-img{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:10px 0;
+    border:4px solid #27ae60;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin:8px 0;
+    border-radius:10px;
+    border:2px solid #ddd;
+    font-size:16px;
+}
+
+button{
+    width:95%;
+    padding:14px;
+    background:#27ae60;
+    color:white;
+    font-size:18px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    margin-top:10px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#219150;
+    transform:scale(1.05);
+}
+
+.footer{
+    margin-top:15px;
+    font-size:12px;
+    color:#666;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<img src="img/logo.png" class="logo" alt="Logo Sekolah">
+
+<h1>SDN 2 DAMARJATI</h1>
+<p>Kec. Pecangaan, Kab. Jepara<br>Jawa Tengah, Indonesia</p>
+
+<h1>📘 Pelajaran PKN Kelas 6</h1>
+
+<img src="img/guru.png" class="guru-img" alt="Foto Guru">
+
+<p><b>Guru Pembimbing:</b><br>
+M. Fathur Rozak</p>
+
+<input type="text" id="nama" placeholder="Masukkan Nama Lengkap">
+<input type="number" id="absen" placeholder="Masukkan Nomor Absen">
+
+<button onclick="login()">🚀 MULAI BELAJAR</button>
+
+<div class="footer">
+Mini LMS PKN Interaktif 🎓
+</div>
+
+</div>
+
+<script>
+function login(){
+    let nama = document.getElementById("nama").value;
+    let absen = document.getElementById("absen").value;
+
+    if(nama === "" || absen === ""){
+        alert("Nama dan Nomor Absen harus diisi ya 😊");
+        return;
+    }
+
+    localStorage.setItem("nama_siswa", nama);
+    localStorage.setItem("absen_siswa", absen);
+
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

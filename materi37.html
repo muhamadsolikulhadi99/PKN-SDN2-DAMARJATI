@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi 37 - Selat dan Contoh Selat di Indonesia</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Highlight untuk tabel */
+tr.highlight {
+    background-color: #fff3a3;
+}
+</style>
+
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="container">
+
+<h2>📘 MATERI 37: SELAT DAN CONTOH SELAT DI INDONESIA</h2>
+
+<div class="audio-box">
+    <button class="btn-audio play" onclick="playTTS()">▶ Play</button>
+    <button class="btn-audio pause" onclick="pauseTTS()">⏸ Pause</button>
+    <button class="btn-audio stop" onclick="stopTTS()">⏹ Stop</button>
+</div>
+
+<div class="text-area" id="materiText">
+
+<!-- ============================== -->
+<!-- TAMPILAN UTAMA (TIDAK DIBACA TTS) -->
+<!-- ============================== -->
+
+<p><b>Selat dan Contoh Selat di Indonesia</b></p>
+
+<p>
+Selat adalah bagian laut yang sempit dan terletak di antara dua pulau atau lebih, 
+yang berfungsi menghubungkan dua laut atau samudra. 
+Selat memiliki peranan penting sebagai jalur pelayaran, perdagangan, dan transportasi laut. Contoh:
+</p>
+
+<table>
+<tr>
+<th>No</th>
+<th>Nama Selat</th>
+<th>Letak</th>
+</tr>
+
+<tr id="row1">
+<td>1</td>
+<td>Selat Bangka</td>
+<td>Antara Pulau Bangka dan Sumatra Selatan</td>
+</tr>
+
+<tr id="row2">
+<td>2</td>
+<td>Selat Malaka</td>
+<td>Antara Pulau Sumatra dan Malaysia</td>
+</tr>
+
+<tr id="row3">
+<td>3</td>
+<td>Selat Karimata</td>
+<td>Antara Pulau Sumatra dan Pulau Kalimantan</td>
+</tr>
+
+<tr id="row4">
+<td>4</td>
+<td>Selat Sunda</td>
+<td>Antara Pulau Jawa dan Pulau Sumatra</td>
+</tr>
+
+<tr id="row5">
+<td>5</td>
+<td>Selat Madura</td>
+<td>Di selatan Pulau Madura (Jawa Timur)</td>
+</tr>
+
+<tr id="row6">
+<td>6</td>
+<td>Selat Bali</td>
+<td>Antara Pulau Jawa dan Pulau Bali</td>
+</tr>
+
+<tr id="row7">
+<td>7</td>
+<td>Selat Lombok</td>
+<td>Antara Pulau Bali dan Pulau Lombok</td>
+</tr>
+
+<tr id="row8">
+<td>8</td>
+<td>Selat Alas</td>
+<td>Antara Pulau Lombok dan Pulau Sumbawa (NTB)</td>
+</tr>
+
+<tr id="row9">
+<td>9</td>
+<td>Selat Flores</td>
+<td>Antara Pulau Flores dan Pulau Adonara (NTT)</td>
+</tr>
+
+<tr id="row10">
+<td>10</td>
+<td>Selat Alor</td>
+<td>Antara Pulau Lomblen dan Pulau Pantar (NTT)</td>
+</tr>
+
+<tr id="row11">
+<td>11</td>
+<td>Selat Makassar</td>
+<td>Antara Pulau Kalimantan dan Pulau Sulawesi</td>
+</tr>
+
+<tr id="row12">
+<td>12</td>
+<td>Selat Obi</td>
+<td>Antara Pulau Obi dan Pulau Bacan (Maluku Utara)</td>
+</tr>
+
+</table>
+
+<!-- ============================== -->
+<!-- VERSI TTS (YANG DIBACA) -->
+<!-- ============================== -->
+
+<div class="tts-only">
+
+
+<p data-row="row1">Nomor 1. Selat Bangka, antara Pulau Bangka dan Sumatra Selatan.</p>
+<p data-row="row2">Nomor 2. Selat Malaka, antara Pulau Sumatra dan Malaysia.</p>
+<p data-row="row3">Nomor 3. Selat Karimata, antara Pulau Sumatra dan Pulau Kalimantan.</p>
+<p data-row="row4">Nomor 4. Selat Sunda, antara Pulau Jawa dan Pulau Sumatra.</p>
+<p data-row="row5">Nomor 5. Selat Madura, di selatan Pulau Madura, Jawa Timur.</p>
+<p data-row="row6">Nomor 6. Selat Bali, antara Pulau Jawa dan Pulau Bali.</p>
+<p data-row="row7">Nomor 7. Selat Lombok, antara Pulau Bali dan Pulau Lombok.</p>
+<p data-row="row8">Nomor 8. Selat Alas, antara Pulau Lombok dan Pulau Sumbawa, Nusa Tenggara Barat.</p>
+<p data-row="row9">Nomor 9. Selat Flores, antara Pulau Flores dan Pulau Adonara, Nusa Tenggara Timur.</p>
+<p data-row="row10">Nomor 10. Selat Alor, antara Pulau Lomblen dan Pulau Pantar, Nusa Tenggara Timur.</p>
+<p data-row="row11">Nomor 11. Selat Makassar, antara Pulau Kalimantan dan Pulau Sulawesi.</p>
+<p data-row="row12">Nomor 12. Selat Obi, antara Pulau Obi dan Pulau Bacan, Maluku Utara.</p>
+
+</div>
+
+</div>
+
+<div class="badge" id="badge">
+🏆 Hebat! Materi 37 Selesai Dibaca!
+</div>
+
+<div class="nav-btn">
+    <button class="prev" onclick="window.location.href='materi36.html'">⬅ Sebelumnya</button>
+    <button class="btn-nav menu-btn" onclick="window.location.href='index.html'">🏠 Kembali ke Menu
+    <button class="next" onclick="window.location.href='materi38.html'">Lanjut ➡</button>
+</div>
+
+</div>
+
+<script src="js/materi.js"></script>
+
+</body>
+</html>

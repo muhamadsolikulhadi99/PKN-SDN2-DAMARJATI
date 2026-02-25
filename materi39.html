@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi 39 - Kekhasan Daerah Istimewa di Indonesia</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.highlight-row {
+    background-color: #fff176;
+    transition: 0.3s;
+}
+</style>
+
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="container">
+
+<h2>📘 MATERI 39: KEKHASAN DAERAH ISTIMEWA DI INDONESIA</h2>
+
+<div class="illustration">
+    <img src="img/daerahistimewa.png" alt="Daerah Istimewa Indonesia">
+</div>
+
+<div class="audio-box">
+    <button class="btn-audio play" onclick="playTTS()">▶ Play</button>
+    <button class="btn-audio pause" onclick="pauseTTS()">⏸ Pause</button>
+    <button class="btn-audio stop" onclick="stopTTS()">⏹ Stop</button>
+</div>
+
+<div class="text-area" id="materiText">
+
+<p><b>Kekhasan Daerah Istimewa di Indonesia</b></p>
+
+<p>Indonesia memiliki beberapa provinsi yang diberi status khusus atau istimewa karena sejarah, budaya, dan kondisi sosial tertentu.</p>
+
+<table>
+<tr>
+<th>No</th>
+<th>Nama Daerah</th>
+<th>Kekhasan</th>
+</tr>
+
+<tr id="row1">
+<td>1</td>
+<td>Aceh</td>
+<td>
+Menerapkan Syariat Islam dalam kehidupan masyarakat.<br>
+Memiliki kewenangan khusus dalam bidang hukum Islam bagi umat Islam.<br>
+Diatur dalam UU Nomor 11 Tahun 2006 tentang Pemerintahan Aceh.
+</td>
+</tr>
+
+<tr id="row2">
+<td>2</td>
+<td>Daerah Istimewa Yogyakarta</td>
+<td>
+Sistem pemerintahan berbasis kesultanan.<br>
+Sultan menjabat sebagai Gubernur dan Adipati Pakualaman sebagai Wakil Gubernur.<br>
+Memiliki keistimewaan dalam bidang sejarah dan kebudayaan.
+</td>
+</tr>
+
+<tr id="row3">
+<td>3</td>
+<td>Daerah Khusus Ibukota Jakarta</td>
+<td>
+Berkedudukan sebagai ibu kota negara.<br>
+Menjadi pusat pemerintahan dan perwakilan negara asing.<br>
+Wali kota dan bupati diangkat oleh Gubernur.
+</td>
+</tr>
+
+<tr id="row4">
+<td>4</td>
+<td>Papua dan Papua Barat</td>
+<td>
+Mendapatkan Otonomi Khusus (Otsus).<br>
+Bertujuan mempercepat pembangunan dan meningkatkan kesejahteraan masyarakat.<br>
+Mengutamakan pemberdayaan masyarakat asli Papua.
+</td>
+</tr>
+
+</table>
+
+<!-- ============================== -->
+<!-- TTS KHUSUS ISI TABEL SAJA -->
+<!-- ============================== -->
+
+<div class="tts-only">
+
+<p>Nomor 1. Aceh. Menerapkan Syariat Islam dan memiliki kewenangan khusus dalam hukum Islam. Diatur dalam Undang-Undang Nomor 11 Tahun 2006 tentang Pemerintahan Aceh.</p>
+
+<p>Nomor 2. Daerah Istimewa Yogyakarta. Sistem pemerintahan berbasis kesultanan. Sultan sebagai Gubernur dan Adipati Pakualaman sebagai Wakil Gubernur.</p>
+
+<p>Nomor 3. Daerah Khusus Ibukota Jakarta. Berkedudukan sebagai ibu kota negara dan pusat pemerintahan.</p>
+
+<p>Nomor 4. Papua dan Papua Barat. Mendapatkan Otonomi Khusus untuk mempercepat pembangunan dan meningkatkan kesejahteraan masyarakat.</p>
+
+</div>
+
+</div>
+
+<div class="badge" id="badge">
+🏆 Hebat! Materi 39 Selesai Dibaca!
+</div>
+
+<div class="nav-btn">
+    <button class="prev" onclick="window.location.href='materi38.html'">⬅ Sebelumnya</button>
+    <button class="btn-nav menu-btn" onclick="window.location.href='index.html'">🏠 Kembali ke Menu
+    <button class="next" onclick="window.location.href='materi40.html'">Lanjut ➡</button>
+</div>
+
+</div>
+
+<script src="js/materi.js"></script>
+
+</body>
+</html>

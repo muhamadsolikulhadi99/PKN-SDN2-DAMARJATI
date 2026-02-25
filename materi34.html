@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi 34 - Elemen NKRI</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+    vertical-align: top;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.highlight-row {
+    background-color: #fff176;
+    transition: 0.3s;
+}
+</style>
+
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="container">
+
+<h2>📘 MATERI 34: ELEMEN NEGARA KESATUAN REPUBLIK INDONESIA (NKRI)</h2>
+
+<div class="illustration">
+    <img src="img/nkri.png" alt="NKRI">
+</div>
+
+<div class="audio-box">
+    <button class="btn-audio play" onclick="playTTS()">▶ Play</button>
+    <button class="btn-audio pause" onclick="pauseTTS()">⏸ Pause</button>
+    <button class="btn-audio stop" onclick="stopTTS()">⏹ Stop</button>
+</div>
+
+<div class="text-area" id="materiText">
+
+<p><b>Wilayah Indonesia, Provinsi, dan Karakteristik Wilayah</b></p>
+
+<p>Indonesia adalah negara kepulauan yang sangat luas, terdiri atas ribuan pulau dengan kondisi wilayah yang beragam, baik daratan maupun perairan.</p>
+
+<p>Keberagaman wilayah tersebut memengaruhi kehidupan masyarakat, mata pencaharian, budaya, serta sistem pemerintahan di setiap daerah.</p>
+
+<p>Oleh karena itu, penting untuk memahami karakteristik wilayah Indonesia serta kekhasan setiap provinsi sebagai bagian dari Negara Kesatuan Republik Indonesia (NKRI).</p>
+
+<table>
+<tr>
+<th>No</th>
+<th>Wilayah</th>
+<th>Karakteristik</th>
+</tr>
+
+<tr id="row1">
+<td>1</td>
+<td>Wilayah pantai</td>
+<td>Penduduk banyak bekerja sebagai nelayan</td>
+</tr>
+
+<tr id="row2">
+<td>2</td>
+<td>Wilayah pegunungan</td>
+<td>Penduduk banyak bertani</td>
+</tr>
+
+<tr id="row3">
+<td>3</td>
+<td>Wilayah perkotaan</td>
+<td>Banyak kegiatan perdagangan dan jasa</td>
+</tr>
+
+<tr id="row4">
+<td>4</td>
+<td>Sungai</td>
+<td>Masyarakat menggunakan untuk irigasi, transportasi, rekreasi, olahraga air, dan perikanan</td>
+</tr>
+
+</table>
+
+<!-- ============================== -->
+<!-- TTS KHUSUS ISI TABEL -->
+<!-- ============================== -->
+
+<div class="tts-only">
+
+<p>Nomor 1. Wilayah pantai, penduduk banyak bekerja sebagai nelayan.</p>
+
+<p>Nomor 2. Wilayah pegunungan, penduduk banyak bertani.</p>
+
+<p>Nomor 3. Wilayah perkotaan, banyak kegiatan perdagangan dan jasa.</p>
+
+<p>Nomor 4. Sungai, masyarakat menggunakan untuk irigasi, transportasi, rekreasi, olahraga air, dan perikanan.</p>
+
+</div>
+
+</div>
+
+<div class="badge" id="badge">
+🏆 Hebat! Materi 34 Selesai Dibaca!
+</div>
+
+<div class="nav-btn">
+    <button class="prev" onclick="window.location.href='materi33.html'">⬅ Sebelumnya</button>
+    <button class="btn-nav menu-btn" onclick="window.location.href='index.html'">🏠 Kembali ke Menu
+    <button class="next" onclick="window.location.href='materi35.html'">Lanjut ➡</button>
+</div>
+
+</div>
+
+<script src="js/materi.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi 2 - Sila Pertama</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.highlight-row {
+    background-color: #fff176;
+    transition: 0.3s;
+}
+</style>
+
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="container">
+
+<h2>📘 MATERI 2: SILA PERTAMA</h2>
+
+<div class="illustration">
+    <img src="img/bintang.png" alt="Lambang Sila Pertama">
+</div>
+
+<div class="audio-box">
+    <button class="btn-audio play" onclick="playTTS()">▶ Play</button>
+    <button class="btn-audio pause" onclick="pauseTTS()">⏸ Pause</button>
+    <button class="btn-audio stop" onclick="stopTTS()">⏹ Stop</button>
+</div>
+
+<div class="text-area" id="materiText">
+
+<p><b>SILA PERTAMA: KETUHANAN YANG MAHA ESA</b></p>
+
+<p>Nilai Ketuhanan berarti bangsa Indonesia percaya dan bertakwa kepada Tuhan Yang Maha Esa serta menjunjung tinggi kebebasan beragama.</p>
+
+<table>
+<tr>
+<th>No</th>
+<th>Bagian</th>
+<th>Isi</th>
+</tr>
+
+<tr id="row1">
+<td>1</td>
+<td><b>Makna Nilai Ketuhanan</b></td>
+<td>
+• Mengakui adanya Tuhan Yang Maha Esa<br>
+• Menjalankan ibadah sesuai agama dan kepercayaan masing-masing<br>
+• Menjadikan nilai agama sebagai dasar moral dalam kehidupan<br>
+• Menghormati perbedaan agama dan kepercayaan<br>
+• Hidup rukun dan toleran antarumat beragama
+</td>
+</tr>
+
+<tr id="row2">
+<td>2</td>
+<td><b>Contoh Pengamalan</b></td>
+<td>
+• Berdoa sebelum dan sesudah belajar<br>
+• Melaksanakan ibadah tepat waktu<br>
+• Menghormati teman yang berbeda agama<br>
+• Tidak mengejek atau merendahkan keyakinan orang lain<br>
+• Menjaga sikap toleran di lingkungan sekolah
+</td>
+</tr>
+
+</table>
+
+<!-- ============================== -->
+<!-- TTS KHUSUS ISI TABEL SAJA -->
+<!-- ============================== -->
+
+<div class="tts-only">
+
+<p>Makna Nilai Ketuhanan. Mengakui adanya Tuhan Yang Maha Esa. Menjalankan ibadah sesuai agama masing-masing. Menjadikan nilai agama sebagai dasar moral. Menghormati perbedaan agama. Hidup rukun dan toleran.</p>
+
+<p>Contoh Pengamalan. Berdoa sebelum dan sesudah belajar. Melaksanakan ibadah tepat waktu. Menghormati teman yang berbeda agama. Tidak mengejek keyakinan orang lain. Menjaga sikap toleran di sekolah.</p>
+
+</div>
+
+</div>
+
+<div class="badge" id="badge">
+🏆 Hebat! Materi 2 Selesai Dibaca!
+</div>
+
+<div class="nav-btn">
+    <button class="prev" onclick="window.location.href='materi1.html'">⬅ Sebelumnya</button>
+    <button class="btn-nav menu-btn" onclick="window.location.href='index.html'">🏠 Kembali ke Menu
+    <button class="next" onclick="window.location.href='materi3.html'">Lanjut ➡</button>
+</div>
+
+</div>
+
+<script src="js/materi.js"></script>
+
+</body>
+</html>
