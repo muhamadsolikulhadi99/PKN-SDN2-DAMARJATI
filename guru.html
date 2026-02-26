@@ -178,6 +178,39 @@ let rawData = [];
 let mode = "detail";
 let chart;
 
+/* ===============================
+   FORMAT TANGGAL (INDONESIA)
+================================= */
+function formatTanggal(tgl){
+    if(!tgl) return "-";
+
+    const date = new Date(tgl);
+
+    return date.toLocaleDateString("id-ID", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    });
+}
+
+/* ===============================
+   FORMAT JAM (WIB - ASIA/JAKARTA)
+================================= */
+function formatWaktu(waktuISO){
+    if(!waktuISO) return "-";
+
+    const date = new Date(waktuISO);
+
+    return date.toLocaleTimeString("id-ID", {
+        timeZone: "Asia/Jakarta",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    }) + " WIB";
+}
+
+/* =============================== */
+
 function setMode(m){
     mode = m;
     render();
@@ -200,6 +233,9 @@ function render(){
     }
 }
 
+/* ===============================
+   DETAIL MODE
+================================= */
 function renderDetail(){
 
     document.getElementById("tableHead").innerHTML = `
@@ -219,8 +255,8 @@ function renderDetail(){
         <tr>
             <td>${row[0]}</td>
             <td>${row[1]}</td>
-            <td>${row[2]}</td>
-            <td>${row[3]}</td>
+            <td>${formatTanggal(row[2])}</td>
+            <td>${formatWaktu(row[3])}</td>
             <td>${row[4]}</td>
             <td>${row[5]}</td>
         </tr>`;
@@ -230,6 +266,9 @@ function renderDetail(){
     destroyChart();
 }
 
+/* ===============================
+   RANKING MODE
+================================= */
 function renderRanking(){
 
     let siswaMap = {};
@@ -279,6 +318,9 @@ function renderRanking(){
     renderChart(labels, values);
 }
 
+/* ===============================
+   CHART
+================================= */
 function renderChart(labels, values){
 
     destroyChart();
