@@ -7,51 +7,142 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
+
+/* ===============================
+   BACKGROUND APP
+================================= */
 body{
-    font-family:Arial;
-    background:linear-gradient(135deg,#667eea,#764ba2);
-    padding:20px;
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
 }
+
+/* ===============================
+   APP CARD
+================================= */
 .app{
-    max-width:1200px;
+    max-width:1100px;
     margin:auto;
     background:white;
-    border-radius:20px;
+    border-radius:25px;
     padding:25px;
+    margin-top:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
 }
+
+/* ===============================
+   HEADER
+================================= */
 .header{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
 }
+
+.header h2{
+    margin:0;
+}
+
+/* ===============================
+   BUTTONS
+================================= */
 button{
-    padding:8px 14px;
     border:none;
-    border-radius:8px;
+    border-radius:12px;
+    padding:10px 16px;
     cursor:pointer;
-    margin-left:5px;
+    font-weight:bold;
+    transition:0.3s;
 }
-.mode-btn{ background:#3498db; color:white; }
-.refresh-btn{ background:#27ae60; color:white; }
-table{
-    width:100%;
-    border-collapse:collapse;
+
+.mode-btn{
+    background:#3498db;
+    color:white;
+}
+
+.refresh-btn{
+    background:#27ae60;
+    color:white;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* ===============================
+   TABLE WRAPPER
+================================= */
+.table-wrapper{
+    overflow-x:auto;
     margin-top:20px;
 }
+
+table{
+    width:100%;
+    min-width:700px;
+    border-collapse:collapse;
+}
+
 th,td{
-    padding:8px;
+    padding:10px;
     text-align:center;
 }
+
 th{
     background:#2c3e50;
     color:white;
 }
+
 tr:nth-child(even){
     background:#f2f2f2;
 }
+
+/* ===============================
+   CHART
+================================= */
 canvas{
     margin-top:30px;
 }
+
+/* ===============================
+   MOBILE MODE
+================================= */
+@media(max-width:768px){
+
+    .app{
+        border-radius:0;
+        margin-top:0;
+        padding:15px;
+        min-height:100vh;
+    }
+
+    .header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .header div{
+        width:100%;
+        display:flex;
+        gap:8px;
+        flex-wrap:wrap;
+    }
+
+    .header button{
+        flex:1;
+        font-size:13px;
+        padding:8px;
+    }
+
+    th,td{
+        font-size:12px;
+        padding:6px;
+    }
+
+}
+
 </style>
 </head>
 
@@ -68,10 +159,12 @@ canvas{
     </div>
 </div>
 
+<div class="table-wrapper">
 <table>
 <thead id="tableHead"></thead>
 <tbody id="tableBody"></tbody>
 </table>
+</div>
 
 <canvas id="chart"></canvas>
 
@@ -94,13 +187,12 @@ function loadData(){
     fetch(scriptURL)
     .then(res => res.json())
     .then(data=>{
-        rawData = data.slice(1); // hilangkan header
+        rawData = data.slice(1);
         render();
     });
 }
 
 function render(){
-
     if(mode === "detail"){
         renderDetail();
     }else{
@@ -135,7 +227,6 @@ function renderDetail(){
     });
 
     document.getElementById("tableBody").innerHTML = html;
-
     destroyChart();
 }
 
@@ -157,15 +248,14 @@ function renderRanking(){
     });
 
     let siswaArray = Object.values(siswaMap);
-
     siswaArray.sort((a,b)=> b.total - a.total);
 
     document.getElementById("tableHead").innerHTML = `
         <tr>
-        <th>Ranking</th>
+        <th>Rank</th>
         <th>Absen</th>
         <th>Nama</th>
-        <th>Total Materi</th>
+        <th>Total</th>
         </tr>`;
 
     let html = "";
@@ -175,7 +265,7 @@ function renderRanking(){
     siswaArray.forEach((s,i)=>{
         html += `
         <tr>
-            <td>${i+1}</td>
+            <td>🏆 ${i+1}</td>
             <td>${s.absen}</td>
             <td>${s.nama}</td>
             <td>${s.total}</td>
@@ -186,7 +276,6 @@ function renderRanking(){
     });
 
     document.getElementById("tableBody").innerHTML = html;
-
     renderChart(labels, values);
 }
 
